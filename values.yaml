@@ -1,1 +1,26 @@
+nameOverride: redis
 
+global: 
+  defaultStorageClass: "gp2"
+  redis: 
+    password: "5ri?TEDI33st!W4S"
+
+master:
+  sentinel:
+    enabled: true
+  
+  replica:
+    replicaCount: 1
+  
+  auth: 
+    enabled: true
+    password: "5ri?TEDI33st!W4S"
+  
+  persistence: 
+    enabled: true
+    storageCLass: "gp2"
+    accessModes:
+      - ReadWriteOnce
+      
+  persistentVolumeClaimRetentionPolicy: 
+    enabled: true
